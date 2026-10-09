@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback System</title>
+
+```
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 650px;
+        margin: 30px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #cccccc;
+    }
+
+    h1, h2 {
+        text-align: center;
+        color: #17365d;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 20px;
+        padding: 12px;
+        background-color: #17365d;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #245a91;
+    }
+
+    #message {
+        text-align: center;
+        color: green;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+    .feature {
+        margin-top: 25px;
+        padding: 15px;
+        background: #e8f5e9;
+        border-radius: 6px;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<h1>ABC Engineering College</h1>
+<h2>Student Feedback System</h2>
+
+<form id="feedbackForm">
+
+    <label for="course">Course Name</label>
+    <input type="text" id="course" required>
+
+    <label for="faculty">Faculty Name</label>
+    <input type="text" id="faculty" required>
+
+    <label for="student">Student Name</label>
+    <input type="text" id="student" required>
+
+    <label for="register">Register Number</label>
+    <input type="text" id="register" required>
+
+    <label for="department">Department</label>
+    <select id="department" required>
+        <option value="">Select Department</option>
+        <option>CSE</option>
+        <option>IT</option>
+        <option>ECE</option>
+        <option>EEE</option>
+        <option>Mechanical</option>
+    </select>
+
+    <label for="rating">Faculty Rating</label>
+    <select id="rating" required>
+        <option value="">Select Rating</option>
+        <option value="5">5 - Excellent</option>
+        <option value="4">4 - Very Good</option>
+        <option value="3">3 - Good</option>
+        <option value="2">2 - Average</option>
+        <option value="1">1 - Needs Improvement</option>
+    </select>
+
+    <label for="comments">Comments</label>
+    <textarea id="comments" rows="4"
+              placeholder="Enter your feedback" required></textarea>
+
+    <button type="submit">Submit Feedback</button>
+
+</form>
+
+<p id="message"></p>
+
+<div class="feature">
+    <h3>Rating Guide</h3>
+    <p>5 - Excellent | 4 - Very Good | 3 - Good</p>
+    <p>2 - Average | 1 - Needs Improvement</p>
+</div>
+```
+
+</div>
+
+<script>
+    document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const student = document.getElementById("student").value;
+
+        document.getElementById("message").textContent =
+            "Thank you, " + student + "! Your feedback has been submitted successfully.";
+
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
